@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       <HeroSection/>
-      <h1>This is the headline</h1>
     </div>
   );
 }

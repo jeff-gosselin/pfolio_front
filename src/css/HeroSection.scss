@@ -1,4 +1,8 @@
-
+// Website Colors
+$color-green: rgb(118,160,160);
+$color-blue: rgb(1,29,43);
+$color-white: rgb(253,253,253);
+$color-gray: rgb(209,230,233);
 
 .bkg-img {
     background-color: rgba(104,140,140,1);
@@ -7,13 +11,48 @@
     z-index: -1;
 }
 
+#logo {
+    position: absolute;
+    top: 2.7rem;
+    left: 6rem;
+    z-index: 10;
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color-green;
+    }
+
+    span {
+        color: $color-blue;
+    }
+}
+
 .title {
     position: absolute;
+    bottom: 20vh;
+    right: 20vw;
+    z-index: 10;
+
+    h1 {
+        color: $color-white;
+        font-size: 5rem;
+        font-weight: 500;
+    }
+
+    p {
+        color: $color-gray;
+        font-size: 2.5rem;
+        font-weight: 200;
+    }
+    
 }
 
 .wht-bkg {
     background-color: rgb(255, 255, 255);
     width: 100vw;
     height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
     z-index: 1;
 }
