@@ -8,6 +8,6 @@ function App() {
       <HeroSection/>
     </div>
   );
-}
+};
 
 export default App;

@@ -5,10 +5,15 @@ $color-white: rgb(253,253,253);
 $color-gray: rgb(209,230,233);
 
 .bkg-img {
-    background-color: rgba(104,140,140,1);
+    background-image: linear-gradient(to right, rgba(1,29,43,.95) 15%, rgba(75,115,115,.6)), url(../img/city.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+#hero {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
 }
 
 #logo {
@@ -17,40 +22,75 @@ $color-gray: rgb(209,230,233);
     left: 6rem;
     z-index: 10;
 
+    img {
+        display: inline-block;
+        width: 40px;
+    }
+
     h1 {
-        font-size: 2.5rem;
+        position: relative;
+        top: -30px;
+        margin: 20px;
+        display: inline-block;
+        font-size: 2.65rem;
         font-weight: 700;
         text-transform: uppercase;
         color: $color-green;
+
+        span {
+            color: $color-blue;
+        }
     }
 
-    span {
-        color: $color-blue;
+    
+}
+
+.man-on-mouse {
+    position: absolute;
+    left: 22%;
+    bottom: 100vh;
+    z-index: 10;
+
+    img {
+        min-height: 1200px;
+        height: 94vh;
     }
+
+    animation: mouseDrop 2.5s ease .5s 1 forwards;
+}
+
+@keyframes mouseDrop {
+    0% { bottom: 100vh; opacity: 0; }
+    25% { opacity: 1; }
+    75% { bottom: 8vh; opacity: 1; }
+    100% { bottom: 12vh; opacity: 1; }
 }
 
 .title {
     position: absolute;
     bottom: 20vh;
-    right: 20vw;
+    right: 18vw;
+    text-align: center;
+    text-transform: uppercase;
     z-index: 10;
 
     h1 {
         color: $color-white;
         font-size: 5rem;
         font-weight: 500;
+        text-shadow: 2px 2px 4px rgba(1,29,43,.5);
     }
 
     p {
         color: $color-gray;
-        font-size: 2.5rem;
+        font-size: 2.75rem;
         font-weight: 200;
     }
     
 }
 
 .wht-bkg {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 1);
     width: 100vw;
     height: 100vh;
     clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
