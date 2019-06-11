@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TopNav from './TopNav';
-import '../css/HeroSection.css';
+import '../css/HeroSection.scss';
 
 const HeroSection = () => {
     return (
@@ -12,7 +12,7 @@ const HeroSection = () => {
             </div>
             
 
-            <div clas="wht-bkg"></div>
+            <div class="wht-bkg"></div>
             <div class="bkg-img"></div>
         </section>
     );

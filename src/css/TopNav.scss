@@ -1,0 +1,17 @@
+$color-green: rgb(118,160,160);
+
+
+nav {
+    position: absolute;
+    top: 3rem;
+    right: 10rem;
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin-left: 10rem;
+        font-size: 2rem;
+        font-weight: 400;
+        color: $color-green;
+    }
+}
