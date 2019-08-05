@@ -42,7 +42,7 @@ $color-gray: rgb(209,230,233);
         }
     }
 
-    
+
 }
 
 .man-on-mouse {
@@ -52,7 +52,7 @@ $color-gray: rgb(209,230,233);
     z-index: 10;
 
     img {
-        min-height: 1200px;
+        min-height: 900px;
         height: 94vh;
     }
 
@@ -76,17 +76,17 @@ $color-gray: rgb(209,230,233);
 
     h1 {
         color: $color-white;
-        font-size: 5rem;
+        font-size: 4.5rem;
         font-weight: 500;
         text-shadow: 2px 2px 4px rgba(1,29,43,.5);
     }
 
     p {
         color: $color-gray;
-        font-size: 2.75rem;
+        font-size: 2.35rem;
         font-weight: 200;
     }
-    
+
 }
 
 .wht-bkg {
