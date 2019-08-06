@@ -3,6 +3,8 @@ import '../css/App.scss';
 import HeroSection from '../stupid/HeroSection';
 import BioSection from '../stupid/BioSection';
 import WorkSection from '../stupid/WorkSection';
+import ResumeSection from '../stupid/ResumeSection';
+import ContactSection from '../stupid/ContactSection';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <HeroSection />
       <BioSection />
       <WorkSection />
+      <ResumeSection />
+      <ContactSection />
     </div>
   );
 };

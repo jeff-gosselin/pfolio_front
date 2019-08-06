@@ -13,9 +13,9 @@ import BioSection from './BioSection';
 //         });
 // });
 
-const bio = () => {
-    console.log("BIO");
-    document.querySelector('#bio').scrollIntoView({
+const scroller = (e) => {
+    let btn = e.target.innerHTML.toLowerCase();
+    document.querySelector(`#${btn}`).scrollIntoView({
         behavior: 'smooth'
     });
 }
@@ -28,10 +28,10 @@ const TopNav = () => {
                 <h1><span>Jeff</span> Gosselin</h1>
             </div>
             <ul id="pages">
-                <li onClick={() => bio()}>Bio</li>
-                <li>Work</li>
-                <li>Resume</li>
-                <li>Contact</li>
+                <li onClick={(e) => scroller(e)}>Bio</li>
+                <li onClick={(e) => scroller(e)}>Work</li>
+                <li onClick={(e) => scroller(e)}>Resume</li>
+                <li onClick={(e) => scroller(e)}>Contact</li>
             </ul>
         </nav>
     );
