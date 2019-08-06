@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Project from '../stupid/Project';
 import axios from 'axios';
 import '../css/WorkSection.scss';
 
@@ -17,10 +18,13 @@ class WorkSection extends Component {
     }
 
     render() {
+        let projects = this.state.projects.map(proj => <Project key={proj.id} data={proj} /> );
+
         console.log("Projects:", this.state.projects)
         return (
             <section id="work">
                 <h1>This is the Work Section</h1>
+                {projects}
             </section>
         );
     }
