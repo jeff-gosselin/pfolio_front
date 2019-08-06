@@ -1,7 +1,20 @@
 @import './_variables.scss';
 
 #bio {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: $color-blue;
+    background-color: $color-green;
+
+    h1 {
+        position: absolute;
+    }
+}
+
+.bio-white-bkg {
+    background-color: rgba(255, 255, 255, 1);
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 100%, 0 100%, 0 100%);
+    z-index: 1;
 }
