@@ -1,0 +1,53 @@
+@import "./_variables.scss";
+
+footer {
+	position: fixed;
+	width: 100vw;
+	height: 60px;
+	padding:20px 80px;
+	bottom: 0px;
+	background-color: $color-blue;
+	z-index: 10;
+	transform: translateY(50px);
+	transition: transform .2s;
+
+	.footer-content {
+		opacity: 0;
+		color: $color-white;
+		font-size: 1rem;
+		transition-duration: .5s;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a:link, a:visited {
+			color: $color-white;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #fff;
+		}
+
+		p {
+			font-size: .75rem;
+			color: rgba($color-white, .5);
+		}
+
+		.line {
+			flex: 1;
+			height: 1px;
+			margin: 0 20px;
+			background-color: rgba($color-white, .25);
+		}
+
+	}
+
+	&:hover {
+		transform: translateY(0px);
+
+		.footer-content {
+			opacity: 1;
+		}
+	}
+}
