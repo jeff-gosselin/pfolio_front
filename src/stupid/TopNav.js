@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import logo from '../img/jg-logo.svg';
-import { FaAddressCard } from 'react-icons/fa';
 import '../css/TopNav.scss';
 
 const scroller = (e) => {

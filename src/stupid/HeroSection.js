@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TopNav from './TopNav';
 import '../css/HeroSection.scss';
 import man from '../img/man-on-mouse.png';

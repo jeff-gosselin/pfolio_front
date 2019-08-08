@@ -10,6 +10,14 @@
 
     .login-box {
         text-align: center;
+
+        h3 {
+            color: $color-white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: .1rem;
+            margin: 3rem;
+        }
     }
 
     h1 {
@@ -29,7 +37,7 @@
 
         input {
             margin: .45rem;
-            padding: .45rem 1rem;
+            padding: .475rem 1rem;
             border: 1px solid transparent;
             background-color: $color-white;
             font-size: 1.5rem;
@@ -45,12 +53,23 @@
             align-self: center;
             margin: 30px;
             padding: 10px;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: $color-white;
             border: none;
             border-radius: 3px;
             background-color: $color-blue;
+            box-shadow: 1px 1px 4px rgba($color-blue, .6);
+        }
 
+        button:hover {
+            cursor: pointer;
+            background-color: rgba($color-blue, .9);
+        }
+
+        button:active {
+            background-color: $color-ltblue;
+            box-shadow: none;
         }
     }
+
 }
