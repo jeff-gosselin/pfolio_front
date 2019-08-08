@@ -14,15 +14,16 @@ footer {
 	.footer-content {
 		opacity: 0;
 		color: $color-white;
-		font-size: 1rem;
+		font-size: 1.3rem;
 		transition-duration: .5s;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
 		a:link, a:visited {
-			color: $color-white;
+			color: rgba($color-white,.85);
 			text-decoration: none;
+			transition-duration: .5s;
 		}
 
 		a:hover {
@@ -30,7 +31,8 @@ footer {
 		}
 
 		p {
-			font-size: .75rem;
+			font-size: 1.1rem;
+			letter-spacing: .125rem;
 			color: rgba($color-white, .5);
 		}
 

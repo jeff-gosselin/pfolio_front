@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // CSS
 import '../css/Footer.scss';
@@ -14,7 +14,7 @@ function Footer() {
 				<div className="footer-content">
 					<p>&copy; 2019 Jeff Gosselin,  All Rights Reserved</p>
 					<div className="line"></div>
-					{/* <Link to={'/login'}><FaUser /> Admin Login</Link> */}
+					<Link to={'/login'}><FaUser /> Admin Login</Link>
 				</div>
 			</footer>
 
