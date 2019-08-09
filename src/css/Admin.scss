@@ -1,0 +1,100 @@
+@import './_variables.scss';
+
+#admin {
+
+    nav {
+        height: 60px;
+        width: 100vw;
+        background-color: rgba($color-gray, .15);
+        position: relative;
+        top: 0;
+        border-bottom: 1px solid rgba($color-gray, .5);
+
+        .brand {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 2px;
+            border-right: 1px solid rgba($color-gray, .5);
+            height: 100%;
+            padding-right: 20px;
+
+            h1 {
+                font-size: 2rem;
+                color: $color-green;
+                padding: 0 10px;
+                letter-spacing: .1rem;
+                position: relative;
+                top: -2px;
+
+                span {
+                    color: $color-blue;
+                }
+            }
+
+            img {
+                width: 20px;
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            .site {
+                padding: 0 40px;
+                transform: scale(1.5);
+                color: $color-green;
+            }
+
+            .btn-wrapper {
+                height: 100%;
+                border-left: 1px solid rgba($color-gray, .5);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                button {
+                    align-self: center;
+                    margin: 0px 30px;
+                    padding: 6px 10px;
+                    font-size: 1.35rem;
+                    color: $color-white;
+                    border: none;
+                    border-radius: 3px;
+                    background-color: $color-green;
+        
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba($color-blue, .9);
+                    }
+            
+                    &:active {
+                        background-color: $color-ltblue;
+                    }
+                }
+    
+                
+            }
+
+            .user {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-left: 1px solid rgba($color-gray, .5);
+                height: 100%;
+            }
+            
+            h3 {
+                padding: 0 40px;
+                font-size: 1.35rem;
+                font-weight: 400;
+                color: $color-green;
+            }
+        }
+    }
+
+}
