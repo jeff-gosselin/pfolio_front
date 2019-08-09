@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Project from '../stupid/Project';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import '../css/WorkSection.scss';
 
 const baseURL = 'http://localhost:3000/';
 
 class Admin extends Component {
-    // state = {
-    //     projects: []
-    // }
+    state = {
+        projects: [],
+        loggedIn: true
+    }
 
     // async componentDidMount() {
     //     let projects = await axios.get(`${baseURL}api/v1/projects`);
@@ -18,11 +19,23 @@ class Admin extends Component {
     //     })
     // }
 
+    logout = () => {
+        localStorage.clear();
+        this.setState({
+			loggedIn: !!localStorage.token
+		})
+    }
+
     render() {
+        if (!localStorage.token || localStorage.token === "undefined") {
+            return <Redirect to="/login"/>
+        }
+
         return (
             <section id="admin">
                 <h1>This is the Admin Page</h1>
                 <Link to={'/'}>Go to Site</Link>
+                <button onClick={this.logout}>Log Out</button>
             </section>
         );
     }

@@ -17,7 +17,18 @@
             font-weight: 300;
             letter-spacing: .1rem;
             margin: 3rem;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &:active {
+                color: #fff;
+            }
         }
+
+
     }
 
     h1 {
@@ -42,11 +53,13 @@
             background-color: $color-white;
             font-size: 1.5rem;
             font-weight: 200;
+
+            &:focus {
+                box-shadow: 1px 1px 4px rgba($color-blue, .6);
+            }
         }
 
-        input:focus {
-            box-shadow: 1px 1px 4px rgba($color-blue, .6);
-        }
+        
 
         button {
             width: 60%;
@@ -59,17 +72,19 @@
             border-radius: 3px;
             background-color: $color-blue;
             box-shadow: 1px 1px 4px rgba($color-blue, .6);
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba($color-blue, .9);
+            }
+    
+            &:active {
+                background-color: $color-ltblue;
+                box-shadow: none;
+            }
         }
 
-        button:hover {
-            cursor: pointer;
-            background-color: rgba($color-blue, .9);
-        }
-
-        button:active {
-            background-color: $color-ltblue;
-            box-shadow: none;
-        }
+        
     }
 
 }

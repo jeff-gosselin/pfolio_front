@@ -7,17 +7,17 @@ const HeroSection = () => {
     return (
         <section id="hero">
             <TopNav/>
-            <div class="man-on-mouse">
+            <div className="man-on-mouse">
                 <img src={man} alt="Jeff"/>
             </div>
-            <div class="title">
+            <div className="title">
                 <h1>Web Developer / Designer</h1>
                 <p>Duis laboris velit officia laboris et proident ad nisi.</p>
             </div>
             
-            <div class="bkg-img">
-                <div class="hero-wht-bkg"></div>
-                <div class="stripe"></div>
+            <div className="bkg-img">
+                <div className="hero-wht-bkg"></div>
+                <div className="stripe"></div>
             </div>
             <div className="triangle"></div>
         </section>
