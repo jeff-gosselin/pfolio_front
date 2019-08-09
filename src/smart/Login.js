@@ -11,7 +11,8 @@ class Login extends Component {
         email: '',
         password: '',
         newUser: false,
-        loggedIn: false
+        loggedIn: false,
+        message: ''
     }
 
     onChangeHandler = (event) => {
@@ -23,78 +24,52 @@ class Login extends Component {
     onSubmitHandler(e) {
         e.preventDefault();
         if (this.state.newUser) {
-
-            fetch('http://localhost:3000/api/v1/users', {
-                method: "POST",
-                body: JSON.stringify({
-                    user: {username: this.state.email, password: this.state.password}}),
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-			    }
-
-		    })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Data:", data);
-                localStorage.setItem("token", data.jwt);
-                if (data.jwt && data.jwt !== "undefined") {
-                    this.setState({
-                        loggedIn: true
-                    })
-                }
-            })
-
+            this.logger("users")
         } else {
-    
-            fetch('http://localhost:3000/api/v1/login', {
-                method: "POST",
-                body: JSON.stringify({
-                    user: {username: this.state.email, password: this.state.password}}),
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                }
-
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                localStorage.setItem("token", data.jwt);
-                if (data.jwt && data.jwt !== "undefined") {
-                    this.setState({
-                        loggedIn: true
-                    })
-                }
-            })
+            this.logger("login")
         }
     }
 
-    // loginShopper = (username, password) => {
-	
-        
-    //     return fetch('http://localhost:3000/api/v1/login', {
-    //         method: "POST",
-    //         body: JSON.stringify({
-    //             shopper: {username: username, password: password}}),
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json"
-    //         }
+    logger = (endpoint) => {
+        fetch(`http://localhost:3000/api/v1/${endpoint}`, {
+                method: "POST",
+                body: JSON.stringify({
+                    user: {username: this.state.email, password: this.state.password}}),
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                }
 
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         localStorage.setItem("token", data.jwt);
-    //             return dispatch(loginTheShopper(data.shopper))
-    //     })
-    //     .catch(() => dispatch(loginFailed("fail")))
-        
-    // }
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                if (data.message) {
+                    this.setState({
+                        message: data.message
+                    });
+                }
+
+                if (data.error) {
+                    this.setState({
+                        message: data.error
+                    });
+                }
+                console.log(data.user.username);
+                localStorage.setItem("token", data.jwt);
+                localStorage.setItem("user", data.user.username);
+                if (data.jwt && data.jwt !== "undefined") {
+                    this.setState({
+                        loggedIn: true
+                    })
+                }
+            })
+    }
 
     changeLoginStatus = () => {
         this.setState({
-            newUser: !this.state.newUser
+            newUser: !this.state.newUser,
+            message: ''
         })
     }
 
@@ -102,7 +77,7 @@ class Login extends Component {
         if (localStorage.token && localStorage.token !== "undefined") {
 			return <Redirect to="/admin"/>
 		}
-        console.log("status: ", this.state.newUser);
+        
         return (
             <section id="login">
                 
@@ -111,7 +86,9 @@ class Login extends Component {
                     <form onChange={this.onChangeHandler} onSubmit={this.onSubmitHandler.bind(this)}>
                         <input name="email" type="email" placeholder="email"></input>
                         <input name="password" type="password" placeholder="password"></input>
+                        <p className="message">{this.state.message}</p>
                         <button>{this.state.newUser ? "Create Login" : "Login"}</button>
+                        
                     </form>
                     <h3 onClick={this.changeLoginStatus}>{this.state.newUser ? "Back To Login" : "Create New Login"}</h3>
                 </div>

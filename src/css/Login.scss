@@ -57,9 +57,13 @@
             &:focus {
                 box-shadow: 1px 1px 4px rgba($color-blue, .6);
             }
+
         }
 
-        
+        .message {
+            color: yellow;
+            font-size: 1.75rem;
+        }
 
         button {
             width: 60%;

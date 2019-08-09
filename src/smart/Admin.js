@@ -36,6 +36,13 @@ class Admin extends Component {
                 <h1>This is the Admin Page</h1>
                 <Link to={'/'}>Go to Site</Link>
                 <button onClick={this.logout}>Log Out</button>
+                <ul>
+                    <li>Logged in as: {localStorage.getItem("user")}</li>
+                    <li>change login</li>
+                    <li>Add a Project</li>
+                    <li>Update Project</li>
+                    <li>Delete Project</li>
+                </ul>
             </section>
         );
     }
