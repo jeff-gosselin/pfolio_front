@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Project from '../stupid/Project';
+import AddProject from '../smart/AddProject';
+import AdminProject from '../stupid/AdminProject';
 import logo from '../img/jg-logo.svg';
-import { FaRegWindowMaximize } from 'react-icons/fa';
+import { FaRegWindowMaximize, FaFolderPlus } from 'react-icons/fa';
 import { Link, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 // import axios from 'axios';
 import '../css/Admin.scss';
 
@@ -10,7 +13,7 @@ const baseURL = 'http://localhost:3000/';
 
 class Admin extends Component {
     state = {
-        projects: [],
+        addProject: true,
         loggedIn: true
     }
 
@@ -33,39 +36,41 @@ class Admin extends Component {
             return <Redirect to="/login"/>
         }
 
-        let projects = this.props.projects.map(proj => <Project key={proj.id} data={proj} />);
+        let projects = this.props.projects.map(proj => <AdminProject key={proj.id} data={proj} />);
 
         return (
             <section id="admin">
                 <nav>
-                    <div className="brand">
+                    <Link className="brand" to={'/'}>
                         <img src={logo} alt="Jeff Gosselin: Web Developer / Designer"/>
                         <h1><span>Admin</span>istration</h1>
-                    </div>
+                    </Link>
 
                     <div className="controls">
-                        <Link className="site" to={'/'}><FaRegWindowMaximize /></Link>
+                        <div className="btn-wrapper">
+                            <Link className="new" to={'/add'}><FaFolderPlus /></Link>
+                        </div>
+
                         <div className="user">
                             <h3>Logged in as: {localStorage.getItem("user")}</h3>
                         </div>
                         
                         <div className="btn-wrapper">
                             <button onClick={this.logout}>Log Out</button>
-                        </div>
-                        
-                    </div>
-                    
+                        </div>  
+                    </div>    
                 </nav>
                 
+                <div className="admin-main">
+                    {this.state.addProject ? <AddProject /> : null}
+                    
+
+                    <div className="admin-project">
+                        {projects}
+                    </div>
+                    
+                </div>
                 
-                <ul>
-                    <li>Logged in as: {localStorage.getItem("user")}</li>
-                    <li>change login</li>
-                    <li>Add a Project</li>
-                    <li>Update Project</li>
-                    <li>Delete Project</li>
-                </ul>
-                {projects}
             </section>
         );
     }

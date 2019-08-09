@@ -1,0 +1,21 @@
+@import './_variables.scss';
+
+.add-project-backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    background-color: rgba($color-blue, .85);
+    width: 100vw;
+    height: calc(100vh - 60px);
+    top: 0px;
+    z-index: 100;
+
+    .add-project {
+        padding: 30px;
+        border: 1px solid #eee;
+        background-color: #fff;
+        box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+    }
+}

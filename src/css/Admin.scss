@@ -18,6 +18,7 @@
             border-right: 1px solid rgba($color-gray, .5);
             height: 100%;
             padding-right: 20px;
+            text-decoration: none;
 
             h1 {
                 font-size: 2rem;
@@ -43,10 +44,14 @@
             align-items: center;
             height: 100%;
 
-            .site {
-                padding: 0 40px;
-                transform: scale(1.5);
+            .new {
+                margin: 0 40px;
+                transform: scale(2);
                 color: $color-green;
+
+                &:hover {
+                    color: $color-blue;
+                }
             }
 
             .btn-wrapper {
@@ -64,11 +69,13 @@
                     color: $color-white;
                     border: none;
                     border-radius: 3px;
-                    background-color: $color-green;
+                    color: $color-green;
+                    background-color: transparent;
         
                     &:hover {
                         cursor: pointer;
                         background-color: rgba($color-blue, .9);
+                        color: $color-white;
                     }
             
                     &:active {
@@ -86,6 +93,7 @@
                 align-items: center;
                 border-left: 1px solid rgba($color-gray, .5);
                 height: 100%;
+                background-color: rgba($color-green, .05);
             }
             
             h3 {
@@ -94,6 +102,20 @@
                 font-weight: 400;
                 color: $color-green;
             }
+        }
+    }
+
+    .admin-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 30px;
+        position: relative;
+
+        .admin-projects {
+            display: flex;
+            flex-direction: column;
         }
     }
 
