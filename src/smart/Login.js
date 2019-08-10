@@ -55,9 +55,10 @@ class Login extends Component {
                         message: data.error
                     });
                 }
-                console.log(data.user.username);
+                console.log("User Info:", data.user.id);
                 localStorage.setItem("token", data.jwt);
                 localStorage.setItem("user", data.user.username);
+                localStorage.setItem("id", data.user.id);
                 if (data.jwt && data.jwt !== "undefined") {
                     this.setState({
                         loggedIn: true
