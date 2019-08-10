@@ -10,12 +10,89 @@
     width: 100vw;
     height: calc(100vh - 60px);
     top: 0px;
-    z-index: 100;
+    z-index: 10;
 
     .add-project {
+        position: relative;
         padding: 30px;
         border: 1px solid #eee;
-        background-color: #fff;
+        background-color: rgb(241,247,247);
         box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.75rem;
+            margin: 5px 10px 0 0;
+            opacity: .25;
+
+            &:hover {
+                opacity: 1;
+                cursor: pointer;
+                color: $color-green;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            position: relative;
+            color: $color-blue;
+            top: -10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 40vw;
+
+            textarea {
+                height: 120px;
+                resize: initial;
+            }
+    
+            input, textarea {
+                outline: none;
+                margin: .45rem;
+                padding: .5rem 1rem .5rem 1rem;
+                border: 1px solid #bbb;
+                background-color: #fff;
+                font-size: 1.5rem;
+                font-weight: 200;
+                font-family: 'Oswald', sans-serif;
+                width: 100%;
+                
+
+                &:focus {
+                    box-shadow: 1px 1px 4px rgba($color-blue, .4);
+                }
+    
+            }
+
+            button {
+                padding: 10px;
+                background-color: $color-blue;
+                font-size: 1.35rem;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                width: 90%;
+                margin-top: 20px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color-green;
+                }
+    
+                &:active {
+                    background-color: $color-ltblue;
+                }
+            }
+
+            
+        }
     }
 }

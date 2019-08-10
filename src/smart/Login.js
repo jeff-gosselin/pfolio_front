@@ -84,8 +84,8 @@ class Login extends Component {
                 <div className="login-box">
                     <h1>Administrator Login</h1>
                     <form onChange={this.onChangeHandler} onSubmit={this.onSubmitHandler.bind(this)}>
-                        <input name="email" type="email" placeholder="email"></input>
-                        <input name="password" type="password" placeholder="password"></input>
+                        <input name="email" type="email" placeholder="email" />
+                        <input name="password" type="password" placeholder="password" />
                         <p className="message">{this.state.message}</p>
                         <button>{this.state.newUser ? "Create Login" : "Login"}</button>
                         

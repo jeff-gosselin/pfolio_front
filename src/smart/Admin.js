@@ -13,7 +13,7 @@ const baseURL = 'http://localhost:3000/';
 
 class Admin extends Component {
     state = {
-        addProject: true,
+        addProject: false,
         loggedIn: true
     }
 
@@ -23,6 +23,13 @@ class Admin extends Component {
     //         projects: projects.data
     //     })
     // }
+
+    projectFormToggle = () => {
+        console.log("New Project");
+        this.setState({
+            addProject: !this.state.addProject
+        })
+    }
 
     logout = () => {
         localStorage.clear();
@@ -48,7 +55,7 @@ class Admin extends Component {
 
                     <div className="controls">
                         <div className="btn-wrapper">
-                            <Link className="new" to={'/add'}><FaFolderPlus /></Link>
+                            <div onClick={this.projectFormToggle} className="new"><FaFolderPlus /></div>
                         </div>
 
                         <div className="user">
@@ -62,7 +69,7 @@ class Admin extends Component {
                 </nav>
                 
                 <div className="admin-main">
-                    {this.state.addProject ? <AddProject /> : null}
+                    {this.state.addProject ? <AddProject projectFormToggle={this.projectFormToggle} /> : null}
                     
 
                     <div className="admin-project">

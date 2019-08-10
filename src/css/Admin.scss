@@ -46,11 +46,12 @@
 
             .new {
                 margin: 0 40px;
-                transform: scale(2);
+                font-size: 2rem;
                 color: $color-green;
 
                 &:hover {
                     color: $color-blue;
+                    cursor: pointer;
                 }
             }
 
