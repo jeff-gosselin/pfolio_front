@@ -72,6 +72,7 @@ class AddProject extends Component {
                         <input name="tech" type="text" placeholder="Technologies"/>
                         <input name="url" type="text" placeholder="URL"/>
                         <textarea name="desc" type="text" placeholder="Description"/>
+                        <input type="file" />
                         <button>Add</button> 
                     </form>
                 </div>      
