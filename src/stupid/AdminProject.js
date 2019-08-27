@@ -7,6 +7,7 @@ const AdminProject = (props) => {
     return (
         <div className="admin-project">
             <h1>{title}</h1>
+            <p>{technologies}</p>
             <p>{description}</p>
             <h2>{url}</h2>
         </div>
