@@ -11,7 +11,7 @@ class WorkSection extends Component {
         console.log("Projects:", this.props.projects)
         return (
             <section id="work">
-                <h1>This is the Work Section</h1>
+                {/* <h1>My Work</h1> */}
                 {projects}
             </section>
         );

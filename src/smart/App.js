@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("HELLO:", this.state.projects);
     return (
       <div>
         

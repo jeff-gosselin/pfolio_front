@@ -12,7 +12,7 @@ const HeroSection = () => {
             </div>
             <div className="title">
                 <h1>Web Developer / Designer</h1>
-                <p>Duis laboris velit officia laboris et proident ad nisi.</p>
+                <p>Specializing in Front End Web Development</p>
             </div>
             
             <div className="bkg-img">
