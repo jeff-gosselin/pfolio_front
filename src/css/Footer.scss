@@ -21,9 +21,10 @@ footer {
 		align-items: center;
 
 		a:link, a:visited {
-			color: rgba($color-white,.85);
+			color: rgba($color-white,.75);
 			text-decoration: none;
 			transition-duration: .5s;
+			letter-spacing: .05rem;
 		}
 
 		a:hover {

@@ -70,8 +70,7 @@ class Admin extends Component {
                 <div className="admin-main">
                     {this.state.addProject ? <AddProject projectFormToggle={this.projectFormToggle} /> : null}
                     
-
-                    <div className="admin-project">
+                    <div className="admin-projects">
                         {projects}
                     </div>
                     
