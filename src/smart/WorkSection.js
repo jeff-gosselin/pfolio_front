@@ -8,7 +8,6 @@ class WorkSection extends Component {
     render() {
         let projects = this.props.projects.map(proj => <Project key={proj.id} data={proj} /> );
 
-        console.log("Projects:", this.props.projects)
         return (
             <section id="work">
                 {/* <h1>My Work</h1> */}

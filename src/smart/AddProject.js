@@ -8,6 +8,7 @@ class AddProject extends Component {
         title: '',
         tech: '',
         url: '',
+        github: '',
         desc: '',  
         image: null  
     }
@@ -29,6 +30,13 @@ class AddProject extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+
+        for (let elem in this.state) {
+            if(this.state[elem] === '' || this.state[elem] === null) {
+                return null;
+            }         
+        }
+
         let id = localStorage.getItem("id");
         var today = new Date();
         var dd = today.getDate();
@@ -46,14 +54,11 @@ class AddProject extends Component {
         formData.append('project[title]', this.state.title);
         formData.append('project[technologies]', this.state.tech);
         formData.append('project[url]', this.state.url);
+        formData.append('project[github]', this.state.github);
         formData.append('project[description]', this.state.desc);
         formData.append('project[image]', this.state.image);
         formData.append('project[date]', today);
         formData.append('project[user_id]', id);
-
-        // for (var pair of formData.entries()) {
-        //     console.log(pair[0]+ ', ' + pair[1]); 
-        // }
         
         axios({
             url: 'http://localhost:3000/api/v1/projects',
@@ -63,12 +68,9 @@ class AddProject extends Component {
             },
             data: formData
         }).then(res => console.log(res))
+        .then(this.props.projectFormToggle());
 
-        // let request = new XMLHttpRequest();
-        // request.open('POST', 'http://localhost:3000/api/v1/projects');
-        // request.setRequestHeader('Authorization','Bearer ' + localStorage.token);
-        // request.send(formData);
-        this.props.projectFormToggle();
+        
     }
 
     // onSubmitProjectForm = (e) => {
@@ -127,9 +129,10 @@ class AddProject extends Component {
                         <input name="title" type="text" placeholder="Title" onChange={this.handleInput}/>
                         <input name="tech" type="text" placeholder="Technologies" onChange={this.handleInput}/>
                         <input name="url" type="text" placeholder="URL" onChange={this.handleInput}/>
+                        <input name="github" type="text" placeholder="Github" onChange={this.handleInput}/>
                         <textarea name="desc" type="text" placeholder="Description" onChange={this.handleInput}/>
                         <input type="file" name="image" onChange={this.handleFile}/>
-                        <button>Add</button> 
+                        <button>Add Project</button> 
                     </form>
                 </div>      
             </div>

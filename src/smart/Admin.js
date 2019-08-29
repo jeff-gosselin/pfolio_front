@@ -25,7 +25,6 @@ class Admin extends Component {
     // }
 
     projectFormToggle = () => {
-        console.log("New Project");
         this.setState({
             addProject: !this.state.addProject
         })

@@ -35,7 +35,7 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.25rem;
             position: relative;
             color: $color-green;
             top: -10px;
@@ -53,6 +53,7 @@
                 height: 120px;
                 resize: initial;
             }
+            
     
             input, textarea {
                 outline: none;
@@ -60,12 +61,15 @@
                 padding: .5rem 1rem .5rem 1rem;
                 border: 1px solid #bbb;
                 background-color: #fff;
-                font-size: 1.75rem;
-                font-weight: 200;
                 font-family: 'Oswald', sans-serif;
-                color: $color-green;
+                letter-spacing: .075rem;
+                color: $color-blue;
                 width: 100%;
                 
+                &::placeholder {
+                    color: $color-dkgreen;
+                    font-size: 1.75rem;
+                }
 
                 &:focus {
                     box-shadow: 1px 1px 4px rgba($color-blue, .4);
@@ -73,10 +77,21 @@
     
             }
 
+            input[type="text"], textarea {
+                font-size: 1.95rem;
+                font-weight: 300;
+            }
+
+            input[type="file"] {
+                font-size: 1.75rem;
+                color: $color-green;
+                font-weight: 200;
+            }
+
             button {
                 padding: 10px;
                 background-color: $color-blue;
-                font-size: 1.35rem;
+                font-size: 1.4rem;
                 color: white;
                 border: none;
                 border-radius: 3px;
