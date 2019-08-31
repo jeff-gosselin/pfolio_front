@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../img/jg-logo-alt.svg';
 import Project from '../stupid/Project';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -83,6 +84,7 @@ class Login extends Component {
             <section id="login">
                 
                 <div className="login-box">
+                    <img src={logo} alt="Jeff Gosselin: Web Developer / Designer"/>
                     <h1>Administrator Login</h1>
                     <form onChange={this.onChangeHandler} onSubmit={this.onSubmitHandler.bind(this)}>
                         <input name="email" type="email" placeholder="email" />

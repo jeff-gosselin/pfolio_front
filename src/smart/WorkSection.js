@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Project from '../stupid/Project';
+import logo from '../img/jg-logo.svg';
 import '../css/WorkSection.scss';
 
 
@@ -10,7 +11,9 @@ class WorkSection extends Component {
 
         return (
             <section id="work">
-                <h1 id="work-headline">Projects</h1>
+                <div id="work-headline">
+                    <h1><span>My</span> Projects</h1>
+                </div>
                 <div className="project-grid">
                     {projects}
                 </div>
