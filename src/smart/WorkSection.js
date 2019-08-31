@@ -10,8 +10,11 @@ class WorkSection extends Component {
 
         return (
             <section id="work">
-                {/* <h1>My Work</h1> */}
-                {projects}
+                <h1 id="work-headline">Projects</h1>
+                <div className="project-grid">
+                    {projects}
+                </div>
+                
             </section>
         );
     }

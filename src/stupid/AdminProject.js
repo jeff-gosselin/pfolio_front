@@ -5,7 +5,7 @@ import '../css/AdminProject.scss';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa'; 
 
 const AdminProject = (props) => {
-    const {title, description, url, github, technologies, date, img} = props.data;
+    const {title, url, date, img} = props.data;
     return (
         <div className="admin-project">
             <div className="admin-project-cover">
@@ -17,8 +17,8 @@ const AdminProject = (props) => {
             </div>
             <div className="admin-project-links">
                 <div className="seperator"></div>
-                <FaPencilAlt className="edit"/>
-                <FaTrashAlt className="delete"/>
+                <FaPencilAlt className="edit" onClick={() => props.projectFormToggle("edit", props.data)} />
+                <FaTrashAlt className="delete" onClick={() => props.projectFormToggle("delete", props.data)} />
             </div>
             
         </div>

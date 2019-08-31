@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Project from '../stupid/Project';
-import AddProject from '../smart/AddProject';
+import AddProjectForm from './AddProjectForm';
+import EditProjectForm from './EditProjectForm';
+import DeleteProjectForm from './DeleteProjectForm';
 import AdminProject from '../stupid/AdminProject';
 import logo from '../img/jg-logo.svg';
 import { FaRegWindowMaximize, FaFolderPlus } from 'react-icons/fa';
@@ -13,7 +15,9 @@ const baseURL = 'http://localhost:3000/';
 
 class Admin extends Component {
     state = {
-        addProject: false,
+        projectForm: false,
+        project: null,
+        origin: '',
         loggedIn: true
     }
 
@@ -24,9 +28,11 @@ class Admin extends Component {
     //     })
     // }
 
-    projectFormToggle = () => {
+    projectFormToggle = (origin, project) => {
         this.setState({
-            addProject: !this.state.addProject
+            projectForm: !this.state.projectForm,
+            project: project,
+            origin: origin
         })
     }
 
@@ -42,8 +48,8 @@ class Admin extends Component {
             return <Redirect to="/login"/>
         }
 
-        let projects = this.props.projects.map(proj => <AdminProject key={proj.id} data={proj} />);
-
+        let projects = this.props.projects.map(proj => <AdminProject key={proj.id} data={proj} projectFormToggle={this.projectFormToggle} />);
+        console.log("Origin:", this.state.origin);
         return (
             <section id="admin">
                 <nav>
@@ -54,7 +60,7 @@ class Admin extends Component {
 
                     <div className="controls">
                         <div className="btn-wrapper">
-                            <div onClick={this.projectFormToggle} className="new"><FaFolderPlus /></div>
+                            <div onClick={() => this.projectFormToggle("add", null)} className="new"><FaFolderPlus /></div>
                         </div>
 
                         <div className="user">
@@ -68,8 +74,10 @@ class Admin extends Component {
                 </nav>
                 
                 <div className="admin-main">
-                    {this.state.addProject ? <AddProject projectFormToggle={this.projectFormToggle} /> : null}
-                    
+                    {this.state.projectForm && this.state.origin === 'add' ? <AddProjectForm projectFormToggle={this.projectFormToggle} /> : null}
+                    {this.state.projectForm && this.state.origin === 'edit' ? <EditProjectForm projectFormToggle={this.projectFormToggle} project={this.state.project} /> : null}
+                    {this.state.projectForm && this.state.origin === 'delete' ? <DeleteProjectForm projectFormToggle={this.projectFormToggle} project={this.state.project} /> : null}
+
                     <div className="admin-projects">
                         {projects}
                     </div>
