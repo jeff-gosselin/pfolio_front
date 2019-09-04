@@ -11,13 +11,17 @@ class AdminBio extends Component {
     }
 
     async componentDidMount() {
-        let user = await axios({
+        await axios({
             url: `${baseURL}api/v1/users`,
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.token}`
             }})
-            .then(res => console.log(res.data[0]))
+            .then(res => {
+                this.setState({
+                    pic: res.data[0].pic_url.picture
+                })
+            })
     }
 
     handleFile = (event) => {
@@ -28,20 +32,23 @@ class AdminBio extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target);
+
         let id = localStorage.getItem("id");
-        console.log("ID: ", id)
+
         const formData = new FormData();
         formData.append('user[pic]', this.state.pic);
-
-        axios({
-            url: `${baseURL}api/v1/users/${id}`,
-            method: 'PATCH',
-            headers: {
-                authorization: `Bearer ${localStorage.token}`
-            },
-            pic: formData
-        }).then(res => console.log(res))
+        
+        if (this.state.pic !== null) {
+            axios({
+                url: `${baseURL}api/v1/users/${id}`,
+                method: 'PATCH',
+                headers: {
+                    authorization: `Bearer ${localStorage.token}`
+                },
+                data: formData
+            }).then(res => console.log(res))
+        }
+        
     }
 
     render() {
@@ -52,22 +59,21 @@ class AdminBio extends Component {
                 <div className="admin-bio">
                     
                     <div className="admin-pic">
-                        <div className="pic"></div>  
+                        <div className="pic">
+                            <img src={this.state.pic} />
+                        </div>  
                         <form onSubmit={this.handleSubmit}>
-                            <input type="file" name='pic' onChange={this.handleFile} />
-                            <button>Upload Image</button> 
+                            <input type="file" name="pic" onChange={this.handleFile} />
+                            <button>Upload</button> 
                         </form>  
                     </div>
 
                     <div className="admin-skills">
-                        <h2>Skills</h2> 
-                        <form>
-                            <input type="text" />
-                            <input type="text" />
-                            <input type="text" />
-                            <input type="text" />
-                            <button>Apply Skills</button> 
-                        </form>  
+                        <div className="admin-skills-header">
+                            <h2>Skills</h2>
+                            <button>+</button> 
+                        </div>
+                        
                     </div>
 
                 </div>

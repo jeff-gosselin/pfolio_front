@@ -1,20 +1,120 @@
+@import '../_variables.scss';
+
 .admin-bio {
     display: flex;
+    width: 90vw;
+    justify-content: space-around;
 
-    .pic {
-        border: 1px solid #aaa;
-        width: 30rem;
-        height: 30rem;
-        margin: 2rem;
+    .admin-pic {
+        border-right: 1px solid $color-gray;
+        padding-right: 3rem;
+        .pic {
+            border: .6rem solid $color-green;
+            border-radius: 15rem;
+            width: 30rem;
+            height: 30rem;
+            margin: 2rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+    
+            img {
+                object-fit: cover;
+            }
+        }
+
+        & form {
+            display: flex;
+
+            input {
+                outline: none;
+                padding: .65rem 1rem .65rem 1rem;
+                border: 1px solid #bbb;
+                border-radius: 3px 0 0 3px;
+                background-color: #fff;
+                font-family: 'Oswald', sans-serif;
+                letter-spacing: .075rem;
+                color: $color-blue;
+                width: 80%;
+                
+                &::placeholder {
+                    color: $color-dkgreen;
+                    font-size: 1.75rem;
+                }
+
+                &:focus {
+                    box-shadow: 1px 1px 4px rgba($color-blue, .4);
+                }
+
+            }
+
+            button {
+                padding: 0 1rem;
+                background-color: $color-blue;
+                font-size: 1.4rem;
+                color: white;
+                border: none;
+                border-radius: 0 3px 3px 0;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color-green;
+                }
+    
+                &:active {
+                    background-color: $color-ltblue;
+                }
+            }
+        }
     }
+    
 
-    .admin-skills form {
-        display: flex;
-        flex-direction: column;
+    .admin-skills {
+        padding: 1rem;
+
+        &-header {
+            display: flex;
+            padding: 0 0 1rem 0;
+            border-bottom: 1px solid $color-gray;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        button {
+            padding: 0 .75rem;
+            line-height: 2.25rem;
+            margin: .2rem 1rem 0 1rem;
+            height: 2.35rem;
+            background-color: $color-blue;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 3px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $color-green;
+            }
+
+            &:active {
+                background-color: $color-ltblue;
+            }
+        }
     }
 
 }
 
 .admin-proj-link {
     font-size: 1.5rem;
+    color: $color-green;
+    width: 100vw;
+    display: flex;
+    padding: 0 3rem;
+
+    &:hover {
+        color: $color-blue;
+    }
 }
