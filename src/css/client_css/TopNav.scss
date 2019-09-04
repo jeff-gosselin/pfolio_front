@@ -1,0 +1,62 @@
+@import '../variables.scss';
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 1.75rem;
+    width: 84vw;
+    padding: 0 3rem;
+    z-index: 100;
+
+    #logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 36px;
+        }
+    
+        h1 {
+            margin-left: 1.25rem;
+            font-size: 2.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $color-green;
+    
+            span {
+                color: $color-blue;
+            }
+        }
+    
+    
+    }
+
+    ul#pages {
+        display: flex;
+
+        li {
+            position: relative;
+            list-style: none;
+            margin-left: 7rem;
+            font-size: 2rem;
+            font-weight: 400;
+            color: $color-green;
+            transition-duration: .5s;
+
+            &:hover {
+                cursor: pointer;
+                color: $color-blue;
+            }
+
+            &:active {
+                color: $color-gray;
+            }
+        }
+
+    }
+    
+}
+

@@ -1,0 +1,94 @@
+@import '../_variables.scss';
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba($color-green,.85) 15%, rgba($color-green,.9)), url(../../img/city2.jpg);
+    background-size: cover;
+
+    .login-box {
+        text-align: center;
+
+        h3 {
+            color: $color-white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: .1rem;
+            margin: 3rem;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &:active {
+                color: #fff;
+            }
+        }
+
+
+    }
+
+    h1 {
+        color: $color-white;
+        font-size: 2.5rem;
+        font-weight: 400;
+        padding: 0 20px;
+        margin: 20px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(1,29,43,.5);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        input {
+            margin: .45rem;
+            padding: .475rem 1rem;
+            border: 1px solid transparent;
+            background-color: $color-white;
+            font-size: 1.5rem;
+            font-weight: 200;
+
+            &:focus {
+                box-shadow: 1px 1px 4px rgba($color-blue, .6);
+            }
+
+        }
+
+        .message {
+            color: yellow;
+            font-size: 1.75rem;
+        }
+
+        button {
+            width: 60%;
+            align-self: center;
+            margin: 30px;
+            padding: 10px;
+            font-size: 1.35rem;
+            color: $color-white;
+            border: none;
+            border-radius: 3px;
+            background-color: $color-blue;
+            box-shadow: 1px 1px 4px rgba($color-blue, .6);
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba($color-blue, .9);
+            }
+    
+            &:active {
+                background-color: $color-ltblue;
+                box-shadow: none;
+            }
+        }
+
+        
+    }
+
+}
