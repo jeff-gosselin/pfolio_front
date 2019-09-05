@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../css/admin_css/AdminBioPage.scss';
+import { FaChevronLeft } from 'react-icons/fa';
 
 const baseURL = 'http://localhost:3000/';
 
@@ -54,7 +55,7 @@ class AdminBio extends Component {
     render() {
         return (
             <div>
-                <Link className="admin-proj-link" to="/admin">Back to projects</Link> 
+                <Link className="admin-proj-link" to="/admin"><FaChevronLeft /> <span>back to projects</span></Link> 
                 <div className="admin-bio">
                     
                     <div className="admin-pic">
@@ -72,7 +73,16 @@ class AdminBio extends Component {
                             <h2>Skills</h2>
                             <button>+</button> 
                         </div>
-                        
+                        <ul className="admin-skills-list">
+                            <li>
+                                <h3>ReactJS</h3>
+                                <p>65%</p>
+                            </li>
+                            <li>
+                                <h3>JavaScript</h3>
+                                <p>75%</p>
+                            </li>
+                        </ul>     
                     </div>
 
                     <div className="admin-caption">
