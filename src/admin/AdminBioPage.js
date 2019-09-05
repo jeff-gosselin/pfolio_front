@@ -37,7 +37,7 @@ class AdminBio extends Component {
 
         const formData = new FormData();
         formData.append('user[pic]', this.state.pic);
-        
+
         if (this.state.pic !== null) {
             axios({
                 url: `${baseURL}api/v1/users/${id}`,
@@ -52,7 +52,6 @@ class AdminBio extends Component {
     }
 
     render() {
-        console.log(this.state.pic)
         return (
             <div>
                 <Link className="admin-proj-link" to="/admin">Back to projects</Link> 
@@ -73,6 +72,17 @@ class AdminBio extends Component {
                             <h2>Skills</h2>
                             <button>+</button> 
                         </div>
+                        
+                    </div>
+
+                    <div className="admin-caption">
+                        <div className="admin-caption-header">
+                            <h2>About Me</h2>
+                        </div>
+                        <form onSubmit={this.submitCaption}>
+                            <textarea name="bio" onChange={this.handleCaption} placeholder="Tell them what you're about." />
+                            <button>Submit</button> 
+                        </form>
                         
                     </div>
 
