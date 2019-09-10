@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {url} from '../../urlBase';
 import axios from 'axios';
 import {FaRegWindowClose} from 'react-icons/fa';
 import '../../css/admin_css/AddProject.scss';
@@ -61,7 +62,7 @@ class AddProjectForm extends Component {
         formData.append('project[user_id]', id);
         
         axios({
-            url: 'http://localhost:3000/api/v1/projects',
+            url: `${url}api/v1/projects`,
             method: 'POST',
             headers: {
                 authorization: `Bearer ${localStorage.token}`

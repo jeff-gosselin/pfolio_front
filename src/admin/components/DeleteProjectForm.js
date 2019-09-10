@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import {url} from '../../urlBase';
 import axios from 'axios';
 import {FaRegWindowClose} from 'react-icons/fa';
 import '../../css/admin_css/AddProject.scss';
-
-const baseURL = 'http://localhost:3000/';
 
 class DeleteProjectForm extends Component {
     state = {
@@ -26,7 +25,7 @@ class DeleteProjectForm extends Component {
 
         if (this.state.delete === 'DELETE') {
             axios({
-                url: `${baseURL}api/v1/projects/${projID}`,
+                url: `${url}api/v1/projects/${projID}`,
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.token}`

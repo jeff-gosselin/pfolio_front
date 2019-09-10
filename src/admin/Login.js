@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import {url} from '../urlBase';
 import logo from '../img/jg-logo-alt.svg';
 import { Redirect } from 'react-router-dom';
 import '../css/admin_css/Login.scss';
-
-const baseURL = 'http://localhost:3000/';
 
 class Login extends Component {
     state = {
@@ -30,7 +29,7 @@ class Login extends Component {
     }
 
     logger = (endpoint) => {
-        fetch(`http://localhost:3000/api/v1/${endpoint}`, {
+        fetch(`${url}api/v1/${endpoint}`, {
                 method: "POST",
                 body: JSON.stringify({
                     user: {username: this.state.email, password: this.state.password}}),

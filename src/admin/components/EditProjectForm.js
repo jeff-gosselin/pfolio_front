@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import {url} from '../../urlBase';
 import axios from 'axios';
 import {FaRegWindowClose} from 'react-icons/fa';
 import '../../css/admin_css/AddProject.scss';
-
-const baseURL = 'http://localhost:3000/';
 
 class EditProjectForm extends Component {
     state = {
@@ -15,7 +14,6 @@ class EditProjectForm extends Component {
         image: null  
     }
 
-    // Can't figure this out... getting the correct data from the file upload input
     handleInput = (event) => {
         
             this.setState({
@@ -41,7 +39,8 @@ class EditProjectForm extends Component {
 
         let id = localStorage.getItem("id");
         let projID = this.props.project.id;
-        console.log("Project ID:", projID);
+        
+        // Get today's date
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; //January is 0!
@@ -65,7 +64,7 @@ class EditProjectForm extends Component {
         formData.append('project[user_id]', id);
         
         axios({
-            url: `${baseURL}api/v1/projects/${projID}`,
+            url: `${url}api/v1/projects/${projID}`,
             method: 'PATCH',
             headers: {
                 authorization: `Bearer ${localStorage.token}`

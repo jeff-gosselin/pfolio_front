@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {url} from '../urlBase';
 import HeroSection from './sections/HeroSection';
 import BioSection from './sections/BioSection';
 import WorkSection from './sections/WorkSection';
@@ -11,15 +12,13 @@ import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import '../css/client_css/App.scss';
 
-const baseURL = 'http://localhost:3000/';
-
 class App extends Component {
   state = {
     projects: []
   }
 
   async componentDidMount() {
-      let projects = await axios.get(`${baseURL}api/v1/projects`);
+      let projects = await axios.get(`${url}api/v1/projects`);
       this.setState({
           projects: projects.data
       })

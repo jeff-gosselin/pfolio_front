@@ -8,8 +8,6 @@ import AdminProject from './components/AdminProject';
 import { Redirect, Route, Switch, Link } from 'react-router-dom';
 import '../css/admin_css/Admin.scss';
 
-const baseURL = 'http://localhost:3000/';
-
 class Admin extends Component {
     state = {
         projectForm: false,
