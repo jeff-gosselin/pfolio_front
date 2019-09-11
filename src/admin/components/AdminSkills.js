@@ -72,7 +72,6 @@ class AdminSkills extends Component {
     }
 
     render() {
-        console.log("Skills", this.state.skills);
         let skills = this.state.skills.map((skill) => <AdminSkill key={skill.id} skill={skill} skillDelete={this.skillDelete} />);       
         return (
             <div className="admin-skills">

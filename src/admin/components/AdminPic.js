@@ -4,7 +4,8 @@ import axios from 'axios';
 
 class AdminPic extends Component {
     state = {
-        pic: null
+        imageFile: null,
+        selectedFile: null
     }
 
     async componentDidMount() {
@@ -16,14 +17,14 @@ class AdminPic extends Component {
             }})
             .then(res => {
                 this.setState({
-                    pic: res.data[0].pic_url.picture
+                    imageFile: res.data[0].pic_url.picture
                 })
             })
     }
 
     handleFile = (event) => {
         this.setState({
-            pic: event.currentTarget.files[0]
+            selectedFile: event.currentTarget.files[0]
         })
     }
 
@@ -33,9 +34,9 @@ class AdminPic extends Component {
         let id = localStorage.getItem("id");
 
         const formData = new FormData();
-        formData.append('user[pic]', this.state.pic);
+        formData.append('user[pic]', this.state.selectedFile);
 
-        if (this.state.pic !== null) {
+        if (this.state.selectedFile !== null) {
             axios({
                 url: `${url}api/v1/users/${id}`,
                 method: 'PATCH',
@@ -43,19 +44,25 @@ class AdminPic extends Component {
                     authorization: `Bearer ${localStorage.token}`
                 },
                 data: formData
-            }).then(res => console.log(res))
+            }).then(res => {
+                this.setState({
+                    imageFile: res.data.pic_url.picture
+                })
+                
+            })
         }
         
     }
     
     render() {
+        console.log("File: ", this.state.imageFile)
         return (
             <div className="admin-pic">
                 <div className="pic">
-                    <img src={this.state.pic} />
+                    <img src={this.state.imageFile} />
                 </div>  
                 <form onSubmit={this.handleSubmit}>
-                    <input type="file" name="pic" onChange={this.handleFile} />
+                    <input type="file" onChange={this.handleFile} />
                     <button>Upload</button> 
                 </form>  
             </div>
