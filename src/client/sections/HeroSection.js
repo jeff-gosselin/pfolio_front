@@ -16,10 +16,13 @@ const HeroSection = () => {
             </div>
             
             <div className="bkg-img">
-                <div className="hero-wht-bkg"></div>
+                <div className="hero-wht-bkg">
+                    <div className="stripe"></div>
+                </div>
                 <div className="stripe"></div>
             </div>
             <div className="triangle"></div>
+            
         </section>
     );
 };

@@ -5,26 +5,28 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 1.75rem;
-    width: 84vw;
-    padding: 0 3rem;
+    width: 90vw;
+    padding: 0 3rem 0 5rem;
     z-index: 100;
 
     #logo {
         display: flex;
         align-items: center;
+        z-index: 200;
 
         img {
-            width: 36px;
+            width: 2.7rem;
         }
     
         h1 {
             margin-left: 1.25rem;
-            font-size: 2.65rem;
+            font-size: 2.35rem;
             font-weight: 700;
             text-transform: uppercase;
             color: $color-green;
+            text-shadow: 1px 1px 4px $color-white;
     
             span {
                 color: $color-blue;
@@ -36,6 +38,7 @@ nav {
 
     ul#pages {
         display: flex;
+        position: relative;
 
         li {
             display: flex;
@@ -48,6 +51,8 @@ nav {
             font-weight: 400;
             color: $color-green;
             transition-duration: .5s;
+            text-shadow: 1px 1px 4px $color-white;
+            z-index: 200;
 
             div {
                 background-color: $color-blue;
@@ -70,6 +75,18 @@ nav {
             &:active {
                 color: $color-gray;
             }
+        }
+
+        .stripe {
+            position: absolute;
+            height: 12%;
+            width: calc(100% + 16vw);
+            top: 50%;
+            right: calc(-3rem + -8vw);
+            border-radius: 40px;
+            // transform: translateY(-50%);
+            background-image: linear-gradient(to right, rgba($color-blue,.1) 20%, rgba($color-gray,.325) 20% 80%, rgba($color-blue,.1) 50%);
+            z-index: 1;
         }
 
     }
