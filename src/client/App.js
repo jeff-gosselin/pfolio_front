@@ -37,7 +37,6 @@ class App extends Component {
                 <HeroSection />
                 <BioSection />
                 <WorkSection projects={this.state.projects} />
-                <ResumeSection />
                 <ContactSection />
               </div>
             )}

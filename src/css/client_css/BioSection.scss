@@ -4,12 +4,14 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: $color-green;
+    // background-color: $color-green;
+    background-image: linear-gradient(to right, rgba(1,29,43,.95) 15%, rgba(75,115,115,.6));
 
     h1 {
         position: absolute;
         z-index: 10;
     }
+
 }
 
 .bio-white-bkg {
@@ -17,5 +19,7 @@
     width: 100vw;
     height: 100vh;
     clip-path: polygon(0 0, 100% 100%, 0 100%, 0 100%);
-    z-index: 1;
+    position: absolute;
+    z-index: 10;
 }
+

@@ -17,10 +17,9 @@ const TopNav = () => {
                 <h1><span>Jeff</span> Gosselin</h1>
             </div>
             <ul id="pages">
-                <li onClick={(e) => scroller(e)}>Bio</li>
-                <li onClick={(e) => scroller(e)}>Work</li>
-                <li onClick={(e) => scroller(e)}>Resume</li>
-                <li onClick={(e) => scroller(e)}>Contact</li>
+                <li onClick={(e) => scroller(e)}><div></div>Bio</li>
+                <li onClick={(e) => scroller(e)}><div></div>Work</li>
+                <li onClick={(e) => scroller(e)}><div></div>Contact</li>
             </ul>
         </nav>
     );
