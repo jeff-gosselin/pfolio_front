@@ -5,7 +5,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 1.75rem;
     width: 90vw;
     padding: 0 3rem 0 5rem;
@@ -68,7 +68,7 @@ nav {
                 color: $color-blue;
 
                 div {
-                    animation: barMove .5s cubic-bezier(.29, 1.01, 1, -0.68)  1 forwards;
+                    animation: pointer .5s cubic-bezier(.29, 1.01, 1, -0.68)  1 forwards;
                 }
             }
 
@@ -93,7 +93,7 @@ nav {
     
 }
 
-@keyframes barMove {
+@keyframes pointer {
     0% {
         top: -4rem;
         opacity: 1;

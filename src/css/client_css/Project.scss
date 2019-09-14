@@ -24,11 +24,14 @@
     }
 
     .cover-img {
+        width: 100%;
+        min-height: 100%;
         object-fit: cover;
         transition-duration: .5s;
         transition-timing-function: ease-out;
     
         &:hover {
+            -moz-transform: scale(1.1); 
             transform: scale(1.1);
             outline: none;
         }
