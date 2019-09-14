@@ -31,7 +31,6 @@
         transition-timing-function: ease-out;
     
         &:hover {
-            -moz-transform: scale(1.1); 
             transform: scale(1.1);
             outline: none;
         }
