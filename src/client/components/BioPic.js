@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {url} from '../../urlBase';
 import axios from 'axios';
-import '../../css/client_css/BioCard.scss';
+import '../../css/client_css/BioPic.scss';
 
-class BioCard extends Component {
+class BioPic extends Component {
     state = {
         imageFile: null
     }
@@ -24,15 +24,13 @@ class BioCard extends Component {
     
     render() {
         return (
-            <div className="bio-card">
-                <div className="bio-card-pic">
-                    <img src={this.state.imageFile} />
-                </div>
-                <div className="bio-card-left-column"></div>
-                <div className="bio-card-bkg"></div> 
+            
+            <div className="bio-pic">
+                <img src={this.state.imageFile} />
             </div>
+                
         )
     }
 }
 
-export default BioCard;
+export default BioPic;

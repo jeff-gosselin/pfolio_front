@@ -12,14 +12,41 @@
         z-index: 10;
     }
 
+    & > .stripe {
+        position: absolute;
+        height: .3rem;
+        width: 90vw;
+        top: 50%;
+        left: 0;
+        border-radius: 0 50px 50px 0;
+        
+        // transform: translateY(-50%);
+        background-color: rgba($color-blue,.2);
+        z-index: 1;
+    }
+
+    .bio-white-bkg {
+        background-color: $color-white;
+        width: 100vw;
+        height: 100vh;
+        clip-path: polygon(0 0, 100% 100%, 0 100%, 0 100%);
+        position: absolute;
+        z-index: 10;
+    
+        & > .stripe {
+            position: absolute;
+            height: .3rem;
+            width: 90vw;
+            top: 50%;
+            right: 0;
+            border-radius: 40px;
+            // transform: translateY(-50%);
+            background-color: rgba($color-gray,.325);
+            z-index: 1;
+        }
+    }
+
 }
 
-.bio-white-bkg {
-    background-color: $color-white;
-    width: 100vw;
-    height: 100vh;
-    clip-path: polygon(0 0, 100% 100%, 0 100%, 0 100%);
-    position: absolute;
-    z-index: 10;
-}
+
 

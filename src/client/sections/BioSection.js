@@ -1,13 +1,15 @@
 import React from 'react';
-import BioCard from '../components/BioCard'
+import BioPic from '../components/BioPic'
 import '../../css/client_css/BioSection.scss';
 
 const BioSection = () => {
     return (
         <section id="bio">
-            <h1>This is the Bio Section</h1>
-            <div className="bio-white-bkg"></div>
-            <BioCard />    
+            <div className="bio-white-bkg">
+                <div className="stripe"></div> 
+            </div>
+            <BioPic />
+            <div className="stripe"></div> 
         </section>
     );
 };
