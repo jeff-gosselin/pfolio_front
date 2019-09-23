@@ -10,18 +10,23 @@
     height: 50vh;
     right: 0;
     top: 0;
-    padding: 0 4rem 0 0;
+    padding: 0 6rem 0 0;
     color: $color-white;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 3.25rem;
         font-weight: bold;
-        margin-left: -25%;
-        margin-bottom: 2rem;
+        // margin-left: -15%;
+        margin-bottom: 1.25rem;
+        font-weight: 400;
+        font-style: italic;
+        opacity: .25;
+
     }
     
     p {
         font-size: 2.15rem;
-        
+        font-family: miller-text, serif;
+        opacity: .85;
     }
 }

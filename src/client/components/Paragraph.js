@@ -27,7 +27,7 @@ class Paragraph extends Component {
         return (
             
             <div id="summary">
-                <h2>Let me introduce myself...</h2>
+                <h2>// Let me introduce myself...</h2>
                 <p>"{this.state.pgraph}"</p>
             </div>
                 
