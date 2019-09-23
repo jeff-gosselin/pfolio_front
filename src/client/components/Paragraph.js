@@ -26,8 +26,9 @@ class Paragraph extends Component {
         console.log("Pgraph: ", this.state.pgraph)
         return (
             
-            <div className="summary">
-                {/* <p>{this.state.pgraph}</p> */}
+            <div id="summary">
+                <h2>Let me introduce myself...</h2>
+                <p>"{this.state.pgraph}"</p>
             </div>
                 
         )
