@@ -5,27 +5,14 @@ import '../../css/client_css/Skill.scss';
 import { FaGithub } from 'react-icons/fa';
 
 const Skill = (props) => {
+    console.log("props: ", props.skill.name);
+    const {name, level} = props.skill;
     return (
-        <h2>SKILLY</h2>
+        <div class="skill">
+            <h3>{name}</h3>
+
+        </div>
+        
     );
-    // const {name, description, url, github, technologies, img} = props.data;
-    // return (
-    //     <div className="project">
-    //         <div className="proj-cover">
-    //             <img className="cover-img" src={img.img_url} alt="" />
-    //         </div>
-    //         <div className="proj-info">
-    //             <h1>{title}</h1>
-    //             <p>Built with {technologies}</p>
-    //             <p className="desc">{description}</p>
-    //         </div>
-    //         <div className="proj-links">
-    //             <a href={url} className="proj-url" target="_blank">CLICK TO VIEW</a>
-    //             <div className="seperator"></div>
-    //             <a href={github} className="proj-github" target="_blank"><FaGithub /></a>
-    //         </div>
-            
-    //     </div>
-    // );
 };
 export default Skill;
