@@ -13,7 +13,7 @@ class BioPic extends Component {
             url: `${url}api/v1/users`,
             method: 'GET',
             headers: {
-                authorization: `Bearer ${localStorage.token}`
+                // authorization: `Bearer ${localStorage.token}`
             }})
             .then(res => {
                 this.setState({
@@ -24,10 +24,21 @@ class BioPic extends Component {
     
     render() {
         return (
-            
-            <div className="bio-pic">
-                <img src={this.state.imageFile} />
+            <div>
+                <div className="bio-pic">
+                    <img src={this.state.imageFile} />
+                </div>
+                <div className="bio-pic-solids">
+                    <div className="bio-pic-solid1">
+                        <div className="green"></div>
+                    </div>
+                    <div className="bio-pic-solid2">
+                        <div className="blue"></div>
+                    </div>
+                </div>
+                
             </div>
+            
                 
         )
     }

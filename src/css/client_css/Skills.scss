@@ -10,20 +10,21 @@
     height: 50vh;
     left: 0;
     bottom: 0;
-    padding: 0 0 0 6rem;
+    padding: 0 0 0 7vw;
     color: $color-blue;
 
     h2 {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
+        color: $color-green;
         // margin-left: -15%;
         margin-bottom: 1.25rem;
         font-weight: 400;
         font-style: normal;
-        opacity: .25;
+        // opacity: .25;
         margin-top: -2rem;
 
         span {
-            font-weight: 700;
+            color: $color-blue;
         }
 
     }

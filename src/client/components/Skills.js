@@ -35,7 +35,7 @@ class Skills extends Component {
         return (
             
             <div id="skills">
-                <h2>These are my technical skills...</h2>
+                <h2><span>My</span> Skills</h2>
                 {skill}
             </div>
                 

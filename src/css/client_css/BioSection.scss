@@ -7,9 +7,26 @@
     // background-color: $color-green;
     background-image: linear-gradient(to right, rgba(1,29,43,.95) 15%, rgba(75,115,115,.6));
 
-    h1 {
+    .bio-headline {
         position: absolute;
-        z-index: 10;
+        display: flex;
+        align-items: flex-end;
+        height: 50vh;
+        // mix-blend-mode: hard-light;
+        z-index: 2200;
+        transform: translateX(-.75rem);
+        padding: 0 0 0 6rem;
+
+        h1 {
+            color: rgba($color-green, 1);
+            font-size: 14rem;
+            font-weight: 300;
+
+            span {
+                color: $color-blue;
+            }
+        }
+        
     }
 
     & > .stripe {

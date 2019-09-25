@@ -11,6 +11,7 @@
         position: relative;
         top: 0;
         border-bottom: 1px solid rgba($color-gray, .5);
+        z-index: 100;
 
         .brand {
             display: flex;
