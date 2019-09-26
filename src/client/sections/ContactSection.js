@@ -7,7 +7,8 @@ class ContactSection extends Component {
         name: '',
         email: '',
         message: '',
-        contactID: Math.random() * 100000 | 0
+        contactID: Math.random() * 100000 | 0,
+        formSubmitted: false
     }
 
     handleInput = (e) => {
@@ -26,17 +27,30 @@ class ContactSection extends Component {
         };
          
         window.emailjs.send('gmail', 'contact_form', templateParams)
-        .then(function(response) {
+        .then( response => {
             console.log('SUCCESS!', response.status, response.text);
+            this.setState({
+                formSubmitted: !this.state.formSubmitted
+            })
         }, function(error) {
             console.log('FAILED...', error);
         });
         
-     
     }
+
     render() {
         console.log(this.state);
+
         return (
+            this.state.formSubmitted ? 
+                <section id="contact">
+                    <div className="contact-content">
+                            <h1>Your message has been sent.</h1>
+                            
+                    </div>      
+                </section>
+            :
+
             <section id="contact">
                 <div className="contact-content">
                         <h1>Contact Me</h1>
@@ -48,8 +62,10 @@ class ContactSection extends Component {
                         </form>
                     </div>      
             </section>
-        );
+            
+        )
     }
     
 };
+
 export default ContactSection;
