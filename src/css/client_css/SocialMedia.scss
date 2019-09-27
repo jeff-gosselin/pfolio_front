@@ -1,0 +1,35 @@
+@import '../_variables.scss';
+
+#social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    top: 50vh;
+    right: 0;
+    z-index: 2200;
+
+    span {
+        font-size: 10rem;
+        align-self: center;
+        color: rgba($color-blue,.2);
+        line-height: 8rem;
+        display: block;
+        margin-top: -2.75rem;
+    }
+
+    .media-icon {
+        padding: 0 .5rem;
+        font-size: 5rem;
+        color: $color-blue;
+        opacity: .9;
+        transition-duration: .125s;
+
+        &:hover {
+            transform: translateY(-.5rem);
+            opacity: 1;
+        }
+    }
+}

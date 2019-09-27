@@ -25,7 +25,8 @@ class ContactSection extends Component {
             message: this.state.message,
             contactID: this.state.contactID
         };
-         
+        
+        // www.emailjs.com
         window.emailjs.send('gmail', 'contact_form', templateParams)
         .then( response => {
             console.log('SUCCESS!', response.status, response.text);
@@ -46,7 +47,7 @@ class ContactSection extends Component {
                 <section id="contact">
                     <div className="contact-content">
                             <h1>Your message has been sent.</h1>
-                            
+                            <h1>Thank you.</h1>      
                     </div>      
                 </section>
             :
