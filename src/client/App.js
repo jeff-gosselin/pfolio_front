@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {url} from '../urlBase';
+import TopNav from './sections/TopNav';
 import HeroSection from './sections/HeroSection';
 import BioSection from './sections/BioSection';
 import WorkSection from './sections/WorkSection';
@@ -14,36 +15,55 @@ import '../css/client_css/App.scss';
 
 class App extends Component {
   state = {
-    projects: []
+    projects: [],
+    scrolled: false
   }
 
   async componentDidMount() {
-      let projects = await axios.get(`${url}api/v1/projects`);
-      this.setState({
-          projects: projects.data
-      })
+    const catalyst = document.querySelector('.hero-wht-bkg > .stripe');
+    const observer = new IntersectionObserver(entries => {
+      console.log("entries: ", entries[0].isIntersecting);
+      if (!entries[0].isIntersecting) {
+        this.setState({
+          scrolled: true
+        })
+      } else {
+        this.setState({
+          scrolled: false
+        })
+      }
+
+    });
+    observer.observe(catalyst);
+
+
+    let projects = await axios.get(`${url}api/v1/projects`);
+    this.setState({
+        projects: projects.data
+    });
   }
 
   render() {
     return (
       <div>
-        
         <Switch>
-          <Route path="/login" component={Login} /> 
+          <Route exact path="/login" component={Login} /> 
           <Route path="/admin" render={() => <Admin projects={this.state.projects} />} />
-          <Route path="/" render={ () => {
+          <Route exact path="/" render={ () => {
             return (
               <div>
+                <TopNav scrolled={this.state.scrolled} />
                 <HeroSection />
                 <BioSection />
                 <WorkSection projects={this.state.projects} />
                 <ContactSection />
+                <Footer />
               </div>
             )}
           } />
         </Switch>
         
-        <Footer />
+        
       </div>
     );
   }

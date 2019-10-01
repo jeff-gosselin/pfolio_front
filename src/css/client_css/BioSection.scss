@@ -4,8 +4,9 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    // background-color: $color-green;
-    background-image: linear-gradient(to right, rgba(1,29,43,.95) 15%, rgba(75,115,115,.6));
+    background-image: linear-gradient(to right, rgba(1,29,43,.95) 25%, rgba(75,115,115,.6)), url(../../img/ny_02.jpg);
+    background-size: cover;
+    background-position: top;
 
     .bio-headline {
         position: absolute;

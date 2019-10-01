@@ -1,8 +1,9 @@
 @import '../_variables.scss';
 
 .bkg-img {
-    background-image: linear-gradient(to right, rgba(1,29,43,.95) 15%, rgba(75,115,115,.6)), url(../../img/city.jpg);
+    background-image: linear-gradient(to right, rgba(1,29,43,.95) 25%, rgba(75,115,115,.6)), url(../../img/ny_01.jpg);
     background-size: cover;
+    background-position: bottom;
 
     .hero-wht-bkg {
         position: relative;

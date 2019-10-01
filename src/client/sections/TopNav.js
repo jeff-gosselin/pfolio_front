@@ -9,19 +9,24 @@ const scroller = (e) => {
     });
 }
 
-const TopNav = () => {
+const TopNav = (props) => {
+    console.log('scrolled', props.scrolled);
     return (
-        <nav>
+        <div>
             <div id="logo">
                 <img src={logo} alt="Jeff Gosselin: Web Developer / Designer"/>
                 <h1><span>Jeff</span> Gosselin</h1>
             </div>
-            <ul id="pages">
-                <li onClick={(e) => scroller(e)}><div></div>Bio</li>
-                <li onClick={(e) => scroller(e)}><div></div>Work</li>
-                <li onClick={(e) => scroller(e)}><div></div>Contact</li>
-            </ul>
-        </nav>
+
+            <nav className={props.scrolled ? 'scrolling' : null}>
+                <ul id="pages">
+                    <li onClick={(e) => scroller(e)}><div></div>Bio</li>
+                    <li onClick={(e) => scroller(e)}><div></div>Work</li>
+                    <li onClick={(e) => scroller(e)}><div></div>Contact</li>
+                </ul>
+            </nav>
+        </div>
+        
     );
 };
 export default TopNav;
