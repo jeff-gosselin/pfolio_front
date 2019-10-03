@@ -73,6 +73,7 @@
     text-align: center;
     text-transform: uppercase;
     z-index: 300;
+    transition-duration: 1s;
 
     h1 {
         color: $color-white;
@@ -118,6 +119,20 @@
 
         p {
             font-size: 2.42rem;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .title {
+        right: 8vw;
+
+        h1 {
+            font-size: 3.75rem;
+        }
+
+        p {
+            font-size: 2rem;
         }
     }
 }

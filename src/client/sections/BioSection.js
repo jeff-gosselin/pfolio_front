@@ -8,13 +8,11 @@ import '../../css/client_css/BioSection.scss';
 const BioSection = () => {
     return (
         <section id="bio">
-            {/* <div className="bio-headline">
-                <h1><span>My</span> Bio</h1>
-            </div> */}
             <BioPic />
             <Paragraph />
             <Skills />
             <SocialMedia />
+            
             <div className="bio-white-bkg">
                 <div className="stripe"></div> 
             </div>

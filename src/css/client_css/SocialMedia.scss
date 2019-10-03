@@ -5,10 +5,11 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 50vw;
+    width: 45vw;
     height: 50vh;
     top: 50vh;
     right: 0;
+    transition-duration: 1s;
     z-index: 2200;
 
     span {
@@ -30,6 +31,16 @@
         &:hover {
             transform: translateY(-.5rem);
             opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 525px) {
+    #social-media {
+        flex-direction: column;
+
+        span {
+            display: none;
         }
     }
 }

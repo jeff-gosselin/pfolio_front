@@ -54,3 +54,28 @@
         }
     }
 }
+
+@media (max-width: 525px) {
+    .bio-pic, .bio-pic-solid1, .bio-pic-solid2 {
+        width: 22rem;
+        height: 22rem;  
+    }  
+
+    .bio-pic {
+        top: 20vh;
+        left: 20vw;
+    }
+
+    .bio-pic-solids {
+        .bio-pic-solid1 {
+            top: 20vh;
+            left: 19vw;
+        }
+    
+        .bio-pic-solid2 {
+            top: 20vh;
+            left: 21vw;
+        }
+    }
+    
+}

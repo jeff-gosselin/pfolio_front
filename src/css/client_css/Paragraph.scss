@@ -38,3 +38,20 @@
         // opacity: .95;
     }
 }
+
+@media (max-width: 525px) {
+    #summary {
+        width: 48vw;
+        padding-top: 1rem;
+
+        h2 {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+
+        p {
+            font-size: 1.65rem;
+            line-height: 1.95rem;
+        }
+    }
+}
