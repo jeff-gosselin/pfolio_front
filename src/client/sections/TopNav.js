@@ -12,7 +12,7 @@ const scroller = (e) => {
 const TopNav = (props) => {
     console.log('scrolled', props.scrolled);
     return (
-        <div>
+        <div className="client-nav">
             <div id="logo">
                 <img src={logo} alt="Jeff Gosselin: Web Developer / Designer"/>
                 <h1><span>Jeff</span> Gosselin</h1>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class AdminNav extends Component {
     render() {
         return (
-            <nav>
+            <nav className="admin-nav">
                 <Link className="brand" to={'/'}>
                     <img src={logo} alt="Jeff Gosselin: Web Developer / Designer"/>
                     <h1><span>Admin</span>istration</h1>

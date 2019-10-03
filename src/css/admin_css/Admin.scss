@@ -4,7 +4,11 @@
     min-height: 100vh;
     background-color: $color-white;
 
-    nav {
+    .admin-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 2rem;
         height: 60px;
         width: 100vw;
         background-color: rgba($color-gray, .15);
