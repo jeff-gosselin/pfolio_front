@@ -29,7 +29,7 @@
     }
     
     p {
-        font-size: 2.25rem;
+        font-size: 2rem;
         line-height: 2.75rem;
         text-shadow: 1px 1px 4px rgba(0,0,0,.25);
         font-family: adobe-caslon-pro,serif;
@@ -39,19 +39,19 @@
     }
 }
 
-@media (max-width: 525px) {
+@media (max-width: 625px) {
     #summary {
         width: 48vw;
         padding-top: 1rem;
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.25rem;
             line-height: 2rem;
         }
 
         p {
-            font-size: 1.65rem;
-            line-height: 1.95rem;
+            font-size: 1.75rem;
+            line-height: 2rem;
         }
     }
 }

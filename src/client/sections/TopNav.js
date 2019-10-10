@@ -25,6 +25,7 @@ const TopNav = (props) => {
                     <li onClick={(e) => scroller(e)}><div></div>Contact</li>
                 </ul>
             </nav>
+            <p className='menu-icon'>&#9776;</p>
         </div>
         
     );
