@@ -4,12 +4,15 @@
   text-align: center;
 }
 
-.menu-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba($color-green, .85);
-  z-index: 4000;
+@media (max-width: 715px) {
+  .menu-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba($color-green, .85);
+    box-shadow: 2px 2px 3px rgba($color-blue, .25);
+    z-index: 4000;
+  }
 }

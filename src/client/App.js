@@ -61,7 +61,7 @@ class App extends Component {
           <Route exact path="/" render={ () => {
             return (
               <div>
-                <TopNav scrolled={this.state.scrolled} menuScreen={this.menuScreen} />
+                <TopNav scrolled={this.state.scrolled} menuScreen={this.menuScreen} menu={this.state.menu} />
                 <HeroSection />
                 <BioSection />
                 <WorkSection projects={this.state.projects} />

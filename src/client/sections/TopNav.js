@@ -12,9 +12,14 @@ class TopNav extends Component {
         document.querySelector(`#${btn}`).scrollIntoView({
             behavior: 'smooth'
         });
+
+        if (this.props.menu) {
+            return this.props.menuScreen();
+        } 
     }
 
     render() {
+        console.log("MENU: ", this.props.menu);
         return (
             <div className="client-nav">
                 <div id="logo">
@@ -22,7 +27,7 @@ class TopNav extends Component {
                     <h1><span>Jeff</span> Gosselin</h1>
                 </div>
     
-                <nav className={this.props.scrolled ? 'scrolling' : null}>
+                <nav className={this.props.menu ? 'mobile-menu' : (this.props.scrolled ? 'scrolling' : null)}>
                     <ul id="pages">
                         <li onClick={(e) => this.scroller(e)}><div></div>Bio</li>
                         <li onClick={(e) => this.scroller(e)}><div></div>Work</li>

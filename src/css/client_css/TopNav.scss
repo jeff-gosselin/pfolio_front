@@ -162,6 +162,20 @@
                 cursor: pointer;
             }
         }
+
+        .mobile-menu {
+            position: fixed;
+            display: block;
+            z-index: 4000;
+
+            #pages > li {
+                color: $color-white;
+                text-shadow: none;
+    
+            }
+        }
+
+
     }
 }
 
