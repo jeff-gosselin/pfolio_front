@@ -16,7 +16,15 @@ import '../css/client_css/App.scss';
 class App extends Component {
   state = {
     projects: [],
-    scrolled: false
+    scrolled: false,
+    menu: false
+  }
+
+  menuScreen = () => {
+    console.log("MENU!!!!!!");
+    this.setState({
+      menu: !this.state.menu
+    })
   }
 
   async componentDidMount() {
@@ -36,7 +44,6 @@ class App extends Component {
     });
     observer.observe(catalyst);
 
-
     let projects = await axios.get(`${url}api/v1/projects`);
     this.setState({
         projects: projects.data
@@ -44,15 +51,17 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.menu);
     return (
       <div>
+        { this.state.menu ? <div className="menu-screen"></div> : null }
         <Switch>
           <Route exact path="/login" component={Login} /> 
           <Route path="/admin" render={() => <Admin projects={this.state.projects} />} />
           <Route exact path="/" render={ () => {
             return (
               <div>
-                <TopNav scrolled={this.state.scrolled} />
+                <TopNav scrolled={this.state.scrolled} menuScreen={this.menuScreen} />
                 <HeroSection />
                 <BioSection />
                 <WorkSection projects={this.state.projects} />
