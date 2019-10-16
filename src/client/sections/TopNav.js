@@ -34,7 +34,12 @@ class TopNav extends Component {
                         <li onClick={(e) => this.scroller(e)}><div></div>Contact</li>
                     </ul>
                 </nav>
-                <p onClick={this.props.menuScreen} className='menu-icon'>&#9776;</p>
+                {this.props.menu ?
+                    <p onClick={this.props.menuScreen} className='menu-icon white'>&times;</p>
+                    :
+                    <p onClick={this.props.menuScreen} className='menu-icon'>&#9776;</p>
+                }
+                
             </div>
             
         );

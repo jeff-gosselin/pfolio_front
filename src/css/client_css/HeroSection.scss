@@ -155,7 +155,7 @@
 @media (max-width: 715px) {
     .man-on-mouse {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(1rem);
         img {
             height: 92vh;
         }

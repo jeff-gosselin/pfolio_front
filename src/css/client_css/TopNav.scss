@@ -44,7 +44,7 @@
     
         
     
-        ul#pages {
+        #pages {
             display: flex;
             position: relative;
     
@@ -163,14 +163,33 @@
             }
         }
 
+        .white {
+            color: $color-white;
+            font-size: 5rem;
+            line-height: 3.75rem;
+        }
+
         .mobile-menu {
             position: fixed;
+            right: calc(10vw + 2rem);
             display: block;
             z-index: 4000;
 
-            #pages > li {
-                color: $color-white;
-                text-shadow: none;
+            #pages {
+
+                li:not(:first-child) {
+                    margin-left: 5.5rem;
+                }
+                
+                li {
+                    color: $color-white;
+                    text-shadow: none;
+
+                    &:hover {
+                        color: white;
+                        text-shadow: 0px 0px 4px rgba($color-white, .75);
+                    }
+                }
     
             }
         }
