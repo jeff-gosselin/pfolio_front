@@ -7,7 +7,7 @@ footer {
 	padding:20px 80px;
 	bottom: 0px;
 	background-color: $color-blue;
-	z-index: 10;
+	z-index: 5000;
 	transform: translateY(50px);
 	transition: transform .2s;
 
@@ -51,6 +51,14 @@ footer {
 
 		.footer-content {
 			opacity: 1;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.footer-content {
+		p {
+			display: none;
 		}
 	}
 }
