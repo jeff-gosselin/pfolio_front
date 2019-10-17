@@ -18,13 +18,15 @@
 
     .skill-meter {
         flex: 3;
-        height: .8rem;
-        background-color: $color-blue;
-        border: 1px solid $color-orange;
-        border-radius: .4rem;
+        height: .625rem;
+        background-color: $color-gray;
+        border: 1px solid $color-green;
+        border-radius: 1rem;
 
         .skill-level {
-            background-color: $color-orange;
+            background-color: $color-ltblue2;
+            background-image: url("https://www.transparenttextures.com/patterns/crisp-paper-ruffles.png");
+            box-shadow: 0px 3px 1px rgba(0,0,0,.3);
         }
     }
     
