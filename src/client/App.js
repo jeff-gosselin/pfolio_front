@@ -44,14 +44,16 @@ class App extends Component {
     });
     observer.observe(catalyst);
 
-    let projects = await axios({
-      url: `${url}api/v1/projects`,
-      method: 'GET',
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
-    });
+    let projects = await axios.get(`${url}api/v1/projects`);
     
+    // let projects = await axios({
+    //   url: `${url}api/v1/projects`,
+    //   method: 'GET',
+    //   headers: {
+    //     'Access-Control-Allow-Origin':'*'
+    //   }
+    // });
+
     this.setState({
         projects: projects.data
     });
