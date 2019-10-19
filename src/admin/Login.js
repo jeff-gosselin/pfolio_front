@@ -35,7 +35,7 @@ class Login extends Component {
                     user: {username: this.state.email, password: this.state.password}}),
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json",
+                    'Accept': "application/json",
                     'Access-Control-Allow-Origin': '*'
                 }
 
