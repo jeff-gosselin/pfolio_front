@@ -13,7 +13,9 @@ class AdminPic extends Component {
             url: `${url}api/v1/users`,
             method: 'GET',
             headers: {
-                authorization: `Bearer ${localStorage.token}`
+                authorization: `Bearer ${localStorage.token}`,
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*'
             }})
             .then(res => {
                 this.setState({

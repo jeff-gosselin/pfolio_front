@@ -13,7 +13,9 @@ class AdminSummary extends Component {
             url: `${url}api/v1/summaries`,
             method: 'GET',
             headers: {
-                authorization: `Bearer ${localStorage.token}`
+                authorization: `Bearer ${localStorage.token}`,
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*'
             }});
             
         this.setState({
