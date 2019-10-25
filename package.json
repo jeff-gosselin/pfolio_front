@@ -2,6 +2,7 @@
   "name": "pfolio_front",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://jg-pfolio-api.herokuapp.com/"
   "dependencies": {
     "axios": "^0.19.0",
     "emailjs-com": "^2.4.0",
