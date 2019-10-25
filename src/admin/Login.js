@@ -32,7 +32,10 @@ class Login extends Component {
         fetch(`${url}api/v1/${endpoint}`, {
                 method: "POST",
                 body: JSON.stringify({
-                    user: {username: this.state.email, password: this.state.password}})
+                    user: {username: this.state.email, password: this.state.password}}),
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                }
 
             })
             .then(response => response.json())
