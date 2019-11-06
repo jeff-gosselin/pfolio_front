@@ -11,11 +11,13 @@ const Project = props => {
   return (
     <div className='project'>
       <div className='proj-cover'>
-        <img
-          className='cover-img'
-          src={`${process.env.PUBLIC_URL}/proj-images/${img}`}
-          alt=''
-        />
+        <a href={url} target='_blank' rel='noopener noreferrer'>
+          <img
+            className='cover-img'
+            src={`${process.env.PUBLIC_URL}/proj-images/${img}`}
+            alt=''
+          />
+        </a>
       </div>
       <div className='proj-info'>
         <h1>{title}</h1>

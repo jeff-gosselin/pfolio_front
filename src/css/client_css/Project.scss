@@ -1,113 +1,108 @@
 @import '../_variables.scss';
 
 .project {
-    border: 1px solid #eee;
-    box-shadow: 2px 2px 4px rgba(0,0,0,.1);
-    text-align: center;
-    position: relative;
-    transition-duration: .35s;
-    background-color: #fff;
-    border-radius: 0 0 8% 8%/6%;
-    overflow: hidden; 
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition-duration: 0.35s;
+  background-color: #fff;
+  border-radius: 0 0 8% 8%/6%;
+  overflow: hidden;
+
+  &:hover {
+    border: 1px solid $color-green;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.075);
+  }
+
+  .proj-cover {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    min-height: 240px;
+    overflow: hidden;
+  }
+
+  .cover-img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
 
     &:hover {
-        border: 1px solid $color-green;
-        box-shadow: 4px 4px 8px rgba(0,0,0,.075);
+      transform: scale(1.1);
+      outline: none;
+    }
+  }
+
+  .proj-info {
+    padding: 1.6rem 2.4rem 3.6rem 2.4rem;
+    // margin-bottom: 60px;
+
+    h1 {
+      font-size: 2.6rem;
+      color: $color-blue;
+      padding-bottom: 10px;
+      line-height: 2.85rem;
     }
 
-    .proj-cover {
-        display: flex;
-        justify-content: center;
-        height: 55%;
-        min-height: 280px;
-        overflow: hidden;   
+    p {
+      font-size: 1.55rem;
+      color: rgba($color-green, 0.75);
     }
 
-    .cover-img {
-        width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        transition-duration: .5s;
-        transition-timing-function: ease-out;
-    
-        &:hover {
-            transform: scale(1.1);
-            outline: none;
-        }
+    .desc {
+      font-size: 2rem;
+      font-weight: 300;
+      color: rgba($color-blue, 0.75);
+      margin-top: 20px;
+      margin-bottom: 48px;
+      line-height: 2.35rem;
+    }
+  }
+
+  .proj-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    // padding: 0 1rem;
+    border-top: 1px solid #eee;
+    position: absolute;
+    height: 48px;
+    bottom: 0;
+
+    .proj-url {
+      display: block;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: rgba($color-green, 0.6);
+      width: 75%;
+      line-height: 48px;
+      transition: 0.5s ease;
+
+      &:hover {
+        color: rgba($color-blue, 1);
+      }
     }
 
-    .proj-info {
-        padding: 1.6rem 2.4rem 3.6rem 2.4rem;
-        margin-bottom: 50px;
-    
-        h1 {
-            font-size: 2.6rem;
-            color: $color-blue;
-            padding-bottom: -4px;
-        }
-    
-        p {
-            font-size: 1.55rem;
-            color: rgba($color-green,.75);
-        }
-
-        .desc {
-            font-size: 2rem;
-            font-weight: 300;
-            color: rgba($color-blue,.75);
-            margin-top: 20px;
-            line-height: 2.35rem;
-        }
+    .seperator {
+      width: 1px;
+      height: 48px;
+      background-color: #eee;
     }
 
-    .proj-links {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        // padding: 0 1rem;
-        border-top: 1px solid #eee;
-        position: absolute;
-        height: 48px;
-        bottom: 0;
+    .proj-github {
+      font-size: 2.75rem;
+      color: rgba($color-green, 0.6);
+      width: 25%;
+      line-height: 48px;
+      transition: 0.5s ease;
 
-        .proj-url {
-            display: block;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: rgba($color-green,.6);
-            width: 75%;
-            line-height: 48px;
-            transition: .5s ease;
-
-            &:hover {
-                color: rgba($color-blue,1);
-            }
-        }
-
-        .seperator {
-            width: 1px;
-            height: 48px;
-            background-color: #eee;
-        }
-
-
-        .proj-github {
-            font-size: 2.75rem;
-            color: rgba($color-green,.6);
-            width: 25%;
-            line-height: 48px;
-            transition: .5s ease;
-
-            &:hover {
-                color: rgba($color-blue,1);
-            }
-        }
+      &:hover {
+        color: rgba($color-blue, 1);
+      }
     }
+  }
 }
-
-
-
-
-
-

@@ -5,7 +5,7 @@ const Paragraph = props => {
   return (
     <div id='summary'>
       <h2>Let me introduce myself...</h2>
-      <p>"{props.summary}"</p>
+      <p>{props.summary}</p>
     </div>
   );
 };
