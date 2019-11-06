@@ -17,8 +17,8 @@ const myData = {
       description: 'Lorem ipsum dolar',
       url: 'https://sneakaz-front.herokuapp.com/',
       github: 'https://github.com/jeff-gosselin/sneakaz_front',
-      date: '',
-      img: `${baseUrl}/src/img/proj-images/sneakaz.png`
+      date: 'May 4th, 2019',
+      img: 'sneakaz.png'
     },
     {
       id: 2,
@@ -29,6 +29,16 @@ const myData = {
       github: '',
       date: '',
       img: ''
+    },
+    {
+      id: 3,
+      title: 'Single Page Mockup',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      description: 'Lorem ipsum dolar',
+      url: 'https://mywebnow-page.herokuapp.com',
+      github: 'https://github.com/jeff-gosselin/thesis_proj',
+      date: 'July 12th 2019',
+      img: 'mywebnow.png'
     }
   ]
 };
