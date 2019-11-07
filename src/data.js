@@ -1,12 +1,12 @@
 const myData = {
   summary:
-    'Front end web developer and former graphic designer, well-versed in JavaScript, React, Ruby, Ruby on Rails, HTML, and CSS. Armed with both the ability to code and design visually engaging and interactive experiences.',
+    'Front end web developer and former graphic designer, well-versed in JavaScript, React, HTML, and CSS. Armed with both the ability to code and design visually engaging and interactive experiences.',
   skills: [
     { id: 1, name: 'HTML', level: 85 },
     { id: 2, name: 'CSS', level: 75 },
     { id: 3, name: 'JavaScript', level: 65 },
     { id: 4, name: 'React JS', level: 70 },
-    { id: 5, name: 'Rails', level: 55 }
+    { id: 5, name: 'Rails', level: 48 }
   ],
   projects: [
     {
@@ -59,6 +59,17 @@ const myData = {
       github: 'https://github.com/jeff-gosselin/variant-selector',
       date: 'September 24th 2019',
       img: 'variant-selector.png'
+    },
+    {
+      id: 5,
+      title: 'Surfing The Tube',
+      technologies: ['React', 'CSS', 'YouTube API'],
+      description:
+        'Using the YouTube API, I built an app that allows you to search surf videos.',
+      url: 'http://surftube.herokuapp.com',
+      github: 'https://github.com/jeff-gosselin/mytube',
+      date: 'November 7th 2019',
+      img: 'surftube.png'
     }
   ]
 };
